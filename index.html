@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <p>Prvi broj</p>
+    <input id="prvibroj">
+    <p>Drugi broj</p>
+    <input id="drugibroj">
+    <p>
+        
+        <button id="saberi" onclick="saberi()">Saberi</button>
+        <button id="oduzmi" onclick="oduzmi()">Oduzmi</button>
+        <button id="podeli" onclick="podeli()">Podeli</button>
+        <button id="pomnozi" onclick="pomnozi()">Pomnozi</button>
+
+    </p>
+    <p>Rezultat</p>
+    <input id="rezultat" readonly>
+
+    <script>
+        function saberi() {
+            var prvi = parseFloat(document.getElementById("prvibroj").value);
+            var drugi = parseFloat(document.getElementById("drugibroj").value);
+            var rezultat = prvi + drugi;
+            document.getElementById("rezultat").value = rezultat;
+
+        }
+    
+
+        function oduzmi() {
+            var prvi = parseFloat(document.getElementById("prvibroj").value);
+            var drugi = parseFloat(document.getElementById("drugibroj").value);
+            var rezultat = prvi - drugi;
+            document.getElementById("rezultat").value = rezultat;
+
+        }
+        function podeli() {
+            var prvi = parseFloat(document.getElementById("prvibroj").value);
+            var drugi = parseFloat(document.getElementById("drugibroj").value);
+            if(drugi == 0) {
+                alert("Deljenje sa 0 ne moze da se obavi!");
+                document.getElementById("rezultat").value = "greska";
+            }
+            else{
+            var rezultat = prvi / drugi;
+            document.getElementById("rezultat").value = rezultat;
+        }
+            
+
+        }
+    
+
+        function pomnozi() {
+            var prvi = parseFloat(document.getElementById("prvibroj").value);
+            var drugi = parseFloat(document.getElementById("drugibroj").value);
+            var rezultat = prvi * drugi;
+            document.getElementById("rezultat").value = rezultat;
+
+        }
+    </script>
+</body>
+</html>
